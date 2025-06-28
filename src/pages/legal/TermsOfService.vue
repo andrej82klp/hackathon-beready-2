@@ -174,6 +174,7 @@
             <h2 class="text-2xl font-heading font-bold text-teal-800 mb-4">11. Indemnification</h2>
             <p class="text-gray-700 leading-relaxed">
               You agree to defend, indemnify, and hold harmless {{ BRAND_NAME }} and its licensee and licensors, and their employees, contractors, agents, officers and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees).
+              )
             </p>
           </section>
 
