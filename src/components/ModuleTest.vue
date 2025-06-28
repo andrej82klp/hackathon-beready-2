@@ -1,7 +1,30 @@
 <template>
   <div class="module-test">
+    <!-- Authentication Check -->
+    <div v-if="!isAuthenticated" class="text-center py-8">
+      <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <span class="text-3xl">🔐</span>
+      </div>
+      <h3 class="text-xl font-heading font-bold text-gray-800 mb-2">Sign In Required</h3>
+      <p class="text-gray-600 mb-4">You must be signed in to take tests and earn badges.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <router-link
+          to="/login"
+          class="bg-teal-800 text-white px-6 py-2 rounded-lg font-semibold hover:bg-teal-700 transition-colors duration-200"
+        >
+          Sign In
+        </router-link>
+        <router-link
+          to="/register"
+          class="bg-yellow-400 text-teal-800 px-6 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition-colors duration-200"
+        >
+          Create Account
+        </router-link>
+      </div>
+    </div>
+
     <!-- Loading State -->
-    <div v-if="loading" class="text-center py-8">
+    <div v-else-if="loading" class="text-center py-8">
       <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-teal-800"></div>
       <p class="mt-4 text-gray-600">Loading test...</p>
     </div>
@@ -22,7 +45,7 @@
     </div>
 
     <!-- Test Content -->
-    <div v-else-if="test && questions.length > 0">
+    <div v-else-if="isAuthenticated && test && questions.length > 0">
       <!-- Test Header -->
       <div class="flex items-center justify-between mb-6">
         <h3 class="text-2xl font-heading font-bold text-teal-800">
@@ -139,7 +162,7 @@
     </div>
 
     <!-- No Test Available -->
-    <div v-else class="text-center py-8">
+    <div v-else-if="isAuthenticated" class="text-center py-8">
       <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
         <span class="text-3xl">📝</span>
       </div>
@@ -157,6 +180,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useAuth } from '../stores/auth'
 import { testService } from '../lib/supabase'
 import type { Test, Question } from '../lib/supabase'
 
@@ -167,6 +191,7 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+const { isAuthenticated } = useAuth()
 
 const emit = defineEmits<{
   'test-completed': [score: number, moduleId: string]
@@ -233,6 +258,12 @@ const finishTest = async () => {
 }
 
 onMounted(async () => {
+  // Only load test if user is authenticated
+  if (!isAuthenticated.value) {
+    loading.value = false
+    return
+  }
+  
   loading.value = true
   error.value = null
 

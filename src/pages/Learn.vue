@@ -106,7 +106,12 @@
             <router-link
               :to="`/learn/${module.id}`"
               @click="handleModuleClick(module.id)"
-              class="block w-full bg-teal-800 text-white px-4 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors duration-200 text-center"
+              :class="[
+                'block w-full px-4 py-3 rounded-lg font-semibold transition-colors duration-200 text-center',
+                isAuthenticated 
+                  ? 'bg-teal-800 text-white hover:bg-teal-700' 
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              ]"
             >
               {{ getButtonText(module.id) }}
             </router-link>

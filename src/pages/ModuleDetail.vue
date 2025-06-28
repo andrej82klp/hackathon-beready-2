@@ -154,6 +154,12 @@ onMounted(async () => {
 })
 
 const startTest = () => {
+  // Only allow authenticated users to start tests
+  if (!isAuthenticated.value) {
+    console.warn('User must be authenticated to take tests')
+    return
+  }
+  
   showTest.value = true
   currentQuestion.value = 0
   selectedAnswer.value = null

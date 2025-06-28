@@ -80,19 +80,47 @@
     <!-- Test Link (shown on last slide) -->
     <div v-if="currentSlideIndex === slides.length - 1" class="mt-8 text-center">
       <div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-6">
-        <h3 class="text-xl font-heading font-bold text-teal-800 mb-4">
-          🏆 Ready for Your Badge?
-        </h3>
-        <p class="text-gray-700 mb-6">
-          You've completed all the slides! Now test your knowledge to earn your 
-          <strong>{{ module?.badge_name }}</strong> badge.
-        </p>
-        <button
-          @click="startTest"
-          class="bg-yellow-400 text-teal-800 px-8 py-4 rounded-lg text-lg font-bold hover:bg-yellow-300 transition-colors duration-200 shadow-lg"
-        >
-          Take the Test to Earn Your Badge
-        </button>
+        <!-- Authenticated Users -->
+        <div v-if="isAuthenticated">
+          <h3 class="text-xl font-heading font-bold text-teal-800 mb-4">
+            🏆 Ready for Your Badge?
+          </h3>
+          <p class="text-gray-700 mb-6">
+            You've completed all the slides! Now test your knowledge to earn your 
+            <strong>{{ module?.badge_name }}</strong> badge.
+          </p>
+          <button
+            @click="startTest"
+            class="bg-yellow-400 text-teal-800 px-8 py-4 rounded-lg text-lg font-bold hover:bg-yellow-300 transition-colors duration-200 shadow-lg"
+          >
+            Take the Test to Earn Your Badge
+          </button>
+        </div>
+        
+        <!-- Non-authenticated Users -->
+        <div v-else>
+          <h3 class="text-xl font-heading font-bold text-teal-800 mb-4">
+            🔐 Sign In to Earn Your Badge
+          </h3>
+          <p class="text-gray-700 mb-6">
+            You've completed all the slides! To test your knowledge and earn your 
+            <strong>{{ module?.badge_name }}</strong> badge, please sign in to your account.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <router-link
+              to="/login"
+              class="bg-teal-800 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-teal-700 transition-colors duration-200"
+            >
+              Sign In
+            </router-link>
+            <router-link
+              to="/register"
+              class="bg-yellow-400 text-teal-800 px-8 py-4 rounded-lg text-lg font-bold hover:bg-yellow-300 transition-colors duration-200"
+            >
+              Create Account
+            </router-link>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -100,6 +128,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useAuth } from '../stores/auth'
 
 interface Slide {
   id: number
@@ -120,6 +149,7 @@ interface Props {
 
 const props = defineProps<Props>()
 const emit = defineEmits(['start-test'])
+const { isAuthenticated } = useAuth()
 
 const currentSlideIndex = ref(0)
 

@@ -72,6 +72,12 @@ export const useModules = () => {
   }
 
   const completeModule = async (userId: string, moduleId: string, score: number) => {
+    // Ensure user is authenticated before completing modules
+    if (!userId) {
+      console.warn('User must be authenticated to complete modules')
+      return { data: null, error: new Error('Authentication required') }
+    }
+    
     try {
       const { data, error } = await progressService.completeModule(userId, moduleId, score)
       if (error) throw error

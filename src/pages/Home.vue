@@ -55,7 +55,7 @@
                 <span class="text-sm text-gray-500">{{ module.duration }}</span>
                 <router-link
                   :to="`/learn/${module.id}`"
-                  class="bg-teal-800 text-white px-4 py-2 rounded-lg font-semibold hover:bg-teal-700 transition-colors duration-200"
+                  class="bg-teal-800 text-white px-4 py-2 rounded-lg font-semibold hover:bg-teal-700 transition-colors duration-200 inline-block"
                 >
                   Start Module
                 </router-link>

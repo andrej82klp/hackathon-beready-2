@@ -8,6 +8,12 @@ const currentAchievement = ref<Achievement | null>(null)
 
 export const useAchievements = () => {
   const earnBadge = async (userId: string, badgeName: string, moduleId?: string) => {
+    // Ensure user is authenticated before earning badges
+    if (!userId) {
+      console.warn('User must be authenticated to earn badges')
+      return { data: null, error: new Error('Authentication required'), alreadyEarned: false }
+    }
+    
     try {
       const { data, error, alreadyEarned } = await achievementService.earnBadge(userId, badgeName, moduleId)
 
