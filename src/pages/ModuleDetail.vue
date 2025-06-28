@@ -111,6 +111,7 @@ const { earnBadge } = useAchievements()
 const module = ref<Module | null>(null)
 const loading = ref(true)
 const showTest = ref(false)
+const currentQuestion = ref(0)
 const moduleSlides = ref<{ slides?: any[] } | null>(null)
 
 const moduleProgress = computed(() => {
