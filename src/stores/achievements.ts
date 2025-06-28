@@ -1,6 +1,7 @@
 import { ref } from 'vue'
 import { achievementService } from '../lib/supabase'
 import type { Achievement } from '../lib/supabase'
+import { BRAND_NAME } from '../lib/config'
 
 const showCelebratoryModal = ref(false)
 const currentAchievement = ref<Achievement | null>(null)
@@ -42,7 +43,7 @@ export const useAchievements = () => {
   }
 
   const shareAchievement = (platform: 'facebook' | 'twitter', badgeName: string) => {
-    const text = `I just earned my ${badgeName} badge from ${BRAND_NAME}! I'm learning to be ready to act when it matters most. You can too! #BeReadyToAct`
+    const text = `I just earned my ${badgeName} badge from ${BRAND_NAME}! I'm learning to be ready to act when it matters most.`
     const url = window.location.origin
     
     if (platform === 'facebook') {

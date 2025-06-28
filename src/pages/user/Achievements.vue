@@ -28,7 +28,7 @@
           </div>
           
           <p class="text-gray-600">
-            You're {{ progressPercentage }}% of the way to becoming a BeReady First Aid Hero!
+            You're {{ progressPercentage }}% of the way to becoming a {{ BRAND_NAME }} First Aid Hero!
           </p>
         </div>
       </div>
@@ -271,13 +271,13 @@ const shareBadge = (badge: any, platform: 'facebook' | 'twitter') => {
 }
 
 const shareProgress = (platform: 'facebook' | 'twitter') => {
-  const text = `I've earned ${earnedBadges.value.length} first aid badges on BeReady! I'm building skills to be ready when it matters most. Join me! #BeReadyToAct`
+  const text = `I've earned ${earnedBadges.value.length} first aid badges on ${BRAND_NAME}! I'm building skills to be ready when it matters most.`
   const url = window.location.origin
   
   if (platform === 'facebook') {
     window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`, '_blank')
   } else {
-    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank')
+    window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank')
   }
 }
 

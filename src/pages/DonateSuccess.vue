@@ -96,7 +96,7 @@
             Spread the Word
           </h3>
           <p class="text-gray-700 mb-6">
-            Help us reach more people by sharing BeReady with your friends and family.
+            Help us reach more people by sharing {{ BRAND_NAME }} with your friends and family.
           </p>
           
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -180,14 +180,14 @@ onMounted(() => {
 })
 
 const shareOnFacebook = () => {
-  const text = "I just supported BeReady, a platform providing free first aid education for everyone! Join me in helping build a more prepared community."
+  const text = `I just supported ${BRAND_NAME}, a platform providing free first aid education for everyone! Join me in helping build a more prepared community.`
   const url = window.location.origin
   window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`, '_blank')
 }
 
 const shareOnTwitter = () => {
-  const text = "I just supported @BeReadyOrg, providing free first aid education for everyone! Help build a more prepared community. #BeReadyToAct"
+  const text = `I just supported ${BRAND_TWITTER}, providing free first aid education for everyone! Help build a more prepared community.`
   const url = window.location.origin
-  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank')
+  window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank')
 }
 </script>

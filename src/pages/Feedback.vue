@@ -10,7 +10,7 @@
           We Value Your Feedback
         </h1>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Help us improve BeReady by sharing your thoughts, suggestions, and experiences. 
+          Help us improve {{ BRAND_NAME }} by sharing your thoughts, suggestions, and experiences. 
           Your input directly shapes how we build better first aid education.
         </p>
       </div>
@@ -74,7 +74,7 @@
           <!-- Rating (for general feedback) -->
           <div v-if="feedbackForm.type === 'general'">
             <label class="block text-sm font-medium text-gray-700 mb-3">
-              How would you rate your overall experience with BeReady?
+              How would you rate your overall experience with {{ BRAND_NAME }}?
             </label>
             <div class="flex items-center space-x-2">
               <button
@@ -177,7 +177,7 @@
                   Thank you for your feedback!
                 </h3>
                 <p class="text-sm text-green-700 mt-1">
-                  We've received your message and will review it carefully. Your input helps us make BeReady better for everyone.
+                  We've received your message and will review it carefully. Your input helps us make {{ BRAND_NAME }} better for everyone.
                 </p>
               </div>
             </div>
@@ -233,13 +233,13 @@
         </h3>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="mailto:feedback@beready.org"
+            :href="emailLink"
             class="inline-flex items-center text-teal-800 hover:text-teal-600 font-medium"
           >
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            feedback@beready.org
+            {{ BRAND_EMAIL }}
           </a>
           
           <a
@@ -249,7 +249,7 @@
             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
-            @BeReadyOrg
+            @{{ BRAND_TWITTER }}
           </a>
         </div>
       </div>
@@ -259,7 +259,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { BRAND_NAME, BRAND_TWITTER, BRAND_DOMAIN } from '../lib/config'
+import { BRAND_NAME, BRAND_TWITTER, BRAND_DOMAIN, BRAND_EMAIL } from '../lib/config'
 
 const submitting = ref(false)
 const submitSuccess = ref(false)
@@ -302,6 +302,10 @@ const isFormValid = computed(() => {
   return feedbackForm.value.type && 
          feedbackForm.value.subject.trim() && 
          feedbackForm.value.message.trim()
+})
+
+const emailLink = computed(() => {
+  return 'mailto:feedback@' + BRAND_DOMAIN
 })
 
 const submitFeedback = async () => {

@@ -200,7 +200,7 @@
                     class="mt-1 h-4 w-4 text-teal-800 focus:ring-teal-800 border-gray-300 rounded"
                   />
                   <label for="consent" class="ml-2 text-sm text-gray-700">
-                    I consent to sharing my story on the BeReady platform to inspire others. 
+                    I consent to sharing my story on the {{ BRAND_NAME }} platform to inspire others. 
                     I understand that my story will be reviewed before publication and may be edited for clarity.
                   </label>
                 </div>

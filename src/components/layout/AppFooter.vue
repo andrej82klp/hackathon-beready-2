@@ -52,11 +52,11 @@
                 Feedback
               </router-link>
             </li>
-            <li>
-              <a href="mailto:contact@beready.org" class="text-gray-200 hover:text-white transition-colors duration-200">
-                {{ BRAND_EMAIL }}
+            <!-- <li>
+              <a href="mailto:{{ BRAND_EMAIL }}" class="text-gray-200 hover:text-white transition-colors duration-200">
+                Contact Us
               </a>
-            </li>
+            </li> -->
             <li>
               <a href="#" class="text-gray-200 hover:text-white transition-colors duration-200">
                 Privacy Policy

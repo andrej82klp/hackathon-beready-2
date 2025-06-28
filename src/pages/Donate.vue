@@ -7,7 +7,7 @@
           <span class="text-3xl">❤️</span>
         </div>
         <h1 class="text-4xl md:text-5xl font-heading font-bold text-teal-800 mb-4">
-          Support BeReady
+          Support {{ BRAND_NAME }}
         </h1>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
           Help us keep first aid education free and accessible for everyone. 
@@ -147,7 +147,7 @@
                 class="h-4 w-4 text-teal-800 focus:ring-teal-800 border-gray-300 rounded"
               />
               <label for="newsletter" class="ml-2 text-sm text-gray-700">
-                Send me updates about BeReady's impact
+                Send me updates about {{ BRAND_NAME }}'s impact
               </label>
             </div>
           </div>
@@ -242,7 +242,7 @@
       <!-- Other Ways to Help -->
       <div class="mt-12 bg-teal-800 rounded-xl p-8 text-white text-center">
         <h2 class="text-2xl font-heading font-bold mb-4">
-          Other Ways to Support BeReady
+          Other Ways to Support {{ BRAND_NAME }}
         </h2>
         <p class="text-gray-100 mb-6">
           Can't donate right now? There are other meaningful ways to help our mission.
@@ -252,7 +252,7 @@
           <div>
             <div class="text-3xl mb-2">📢</div>
             <h3 class="font-semibold mb-2">Spread the Word</h3>
-            <p class="text-sm text-gray-200">Share BeReady with friends and family</p>
+            <p class="text-sm text-gray-200">Share {{ BRAND_NAME }} with friends and family</p>
           </div>
           
           <div>
