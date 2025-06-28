@@ -98,7 +98,7 @@
               </li>
               <li class="flex items-start">
                 <span class="text-yellow-400 mr-2">•</span>
-                Fear of "doing it wrong\" prevents people from helping
+                Fear of "doing it wrong" prevents people from helping
               </li>
               <li class="flex items-start">
                 <span class="text-yellow-400 mr-2">•</span>
