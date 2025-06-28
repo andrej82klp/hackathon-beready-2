@@ -82,9 +82,9 @@
             />
             <label for="agree-terms" class="ml-2 block text-sm text-gray-900">
               I agree to the
-              <a href="#" class="text-teal-800 hover:text-teal-700">Terms of Service</a>
+              <router-link to="/legal/terms-of-service" class="text-teal-800 hover:text-teal-700">Terms of Service</router-link>
               and
-              <a href="#" class="text-teal-800 hover:text-teal-700">Privacy Policy</a>
+              <router-link to="/legal/privacy-policy" class="text-teal-800 hover:text-teal-700">Privacy Policy</router-link>
             </label>
           </div>
 

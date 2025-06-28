@@ -52,20 +52,15 @@
                 Feedback
               </router-link>
             </li>
-            <!-- <li>
-              <a href="mailto:{{ BRAND_EMAIL }}" class="text-gray-200 hover:text-white transition-colors duration-200">
-                Contact Us
-              </a>
-            </li> -->
             <li>
-              <a href="#" class="text-gray-200 hover:text-white transition-colors duration-200">
+              <router-link to="/legal/privacy-policy" class="text-gray-200 hover:text-white transition-colors duration-200">
                 Privacy Policy
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#" class="text-gray-200 hover:text-white transition-colors duration-200">
+              <router-link to="/legal/terms-of-service" class="text-gray-200 hover:text-white transition-colors duration-200">
                 Terms of Service
-              </a>
+              </router-link>
             </li>
           </ul>
         </div>
@@ -81,7 +76,7 @@
 </template>
 
 <script setup lang="ts">
-import { BRAND_NAME, BRAND_EMAIL } from '../../lib/config'
+import { BRAND_NAME } from '../../lib/config'
 
 const brandInitial = BRAND_NAME.charAt(0)
 </script>

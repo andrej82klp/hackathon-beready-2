@@ -10,6 +10,8 @@ import Login from '../pages/auth/Login.vue'
 import Register from '../pages/auth/Register.vue'
 import Dashboard from '../pages/user/Dashboard.vue'
 import Achievements from '../pages/user/Achievements.vue'
+import TermsOfService from '../pages/legal/TermsOfService.vue'
+import PrivacyPolicy from '../pages/legal/PrivacyPolicy.vue'
 
 export const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -23,5 +25,7 @@ export const routes = [
   { path: '/login', name: 'Login', component: Login },
   { path: '/register', name: 'Register', component: Register },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard, meta: { requiresAuth: true } },
-  { path: '/achievements', name: 'Achievements', component: Achievements, meta: { requiresAuth: true } }
+  { path: '/achievements', name: 'Achievements', component: Achievements, meta: { requiresAuth: true } },
+  { path: '/legal/terms-of-service', name: 'TermsOfService', component: TermsOfService },
+  { path: '/legal/privacy-policy', name: 'PrivacyPolicy', component: PrivacyPolicy }
 ]
