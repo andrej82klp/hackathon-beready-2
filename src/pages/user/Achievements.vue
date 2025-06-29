@@ -102,7 +102,7 @@
                 v-if="!badge.earned"
                 :to="`/learn/${badge.moduleId}`"
                 class="w-full bg-teal-800 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-teal-700 transition-colors duration-200 text-center"
-                v-text=`Start Learning`
+                v-text="`Start Learning`"
               >
               </router-link>
               
