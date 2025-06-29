@@ -46,13 +46,13 @@
         >
           <div class="p-6">
             <!-- Module Icon and Status -->
-            <div class="flex items-center justify-between mb-4">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between mb-4">
               <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
                 <span class="text-2xl">{{ module.icon }}</span>
               </div>
               
               <!-- Progress Status -->
-              <div v-if="isAuthenticated" class="text-sm">
+              <div v-if="isAuthenticated" class="text-sm mt-2 sm:mt-0">
                 <span
                   v-if="getModuleProgress(module.id)?.completed"
                   class="bg-green-100 text-green-800 px-2 py-1 rounded-full font-medium"
