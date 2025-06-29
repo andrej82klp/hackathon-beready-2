@@ -76,11 +76,13 @@
 
       <!-- Bolt Logo -->
       <div class="absolute bottom-4 right-4">
-        <img 
-          src="/built_with_bolt.svg" 
-          alt="Built with Bolt" 
-          class="w-16 h-auto opacity-70 hover:opacity-100 transition-opacity duration-200"
-        />
+        <a href="https://bolt.new/" target="_blank"
+          <img 
+            src="/built_with_bolt.svg" 
+            alt="Built with Bolt" 
+            class="w-16 h-auto opacity-70 hover:opacity-100 transition-opacity duration-200"
+          />
+        </a>
       </div>
     </div>
   </footer>
