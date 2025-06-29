@@ -160,7 +160,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useAuth } from '../stores/auth'
 import { useModules } from '../stores/modules'
 

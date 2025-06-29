@@ -113,7 +113,7 @@ const loading = ref(true)
 const showTest = ref(false)
 const currentQuestion = ref(0)
 const moduleSlides = ref<{ slides?: any[] } | null>(null)
-const selectedAnswer = ref(0)
+const selectedAnswer = ref<number | null>(null)
 const userAnswers = ref([])
 const testScore = ref(0)
 

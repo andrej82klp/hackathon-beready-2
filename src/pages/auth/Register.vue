@@ -184,10 +184,10 @@ const handleRegister = async () => {
   success.value = false
 
   try {
-    const { data, error: signUpError } = await signUp(email.value, password.value)
+    const { error: signUpError } = await signUp(email.value, password.value)
     
     if (signUpError) {
-      error.value = signUpError.message || 'An error occurred during registration'
+      error.value = (signUpError && (signUpError as { message?: string }).message) || 'An error occurred during registration'
     } else {
       success.value = true
       // Redirect to login after success

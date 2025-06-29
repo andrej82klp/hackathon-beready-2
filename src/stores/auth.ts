@@ -12,7 +12,7 @@ supabase.auth.getSession().then(({ data: { session } }) => {
 })
 
 // Listen for auth changes
-supabase.auth.onAuthStateChange((event, session) => {
+supabase.auth.onAuthStateChange((_, session) => {
   user.value = session?.user ?? null
   loading.value = false
 })

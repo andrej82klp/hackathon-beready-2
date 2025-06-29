@@ -42,7 +42,7 @@
         <!-- Slide Indicators -->
         <div class="hidden md:flex items-center space-x-2">
           <button
-            v-for="(slide, index) in slides"
+            v-for="(_, index) in slides"
             :key="index"
             @click="goToSlide(index)"
             class="w-3 h-3 rounded-full transition-colors duration-200"
@@ -67,7 +67,7 @@
       <div class="md:hidden flex justify-center mt-4">
         <div class="flex items-center space-x-2">
           <button
-            v-for="(slide, index) in slides"
+            v-for="(_, index) in slides"
             :key="index"
             @click="goToSlide(index)"
             class="w-2 h-2 rounded-full transition-colors duration-200"

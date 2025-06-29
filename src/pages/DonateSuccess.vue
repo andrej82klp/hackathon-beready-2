@@ -162,7 +162,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { BRAND_NAME, BRAND_TWITTER, BRAND_DOMAIN } from '../lib/config'
+import { BRAND_NAME, BRAND_TWITTER } from '../lib/config'
 
 const route = useRoute()
 const donationAmount = ref<string | null>(null)

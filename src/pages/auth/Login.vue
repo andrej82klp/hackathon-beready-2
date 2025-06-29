@@ -144,10 +144,10 @@ const handleLogin = async () => {
   error.value = ''
 
   try {
-    const { data, error: signInError } = await signIn(email.value, password.value)
+    const { error: signInError } = await signIn(email.value, password.value)
     
     if (signInError) {
-      error.value = signInError.message || 'An error occurred during sign in'
+      error.value = (signInError && (signInError as { message?: string }).message) || 'An error occurred during sign in'
     } else {
       router.push('/dashboard')
     }

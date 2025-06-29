@@ -258,7 +258,7 @@ export const storyService = {
         featured: false  // Explicitly set featured to false
       })
     
-    return { error }
+    return { data, error }
   }
 }
 

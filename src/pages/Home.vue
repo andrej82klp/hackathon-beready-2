@@ -267,7 +267,6 @@
 import { ref, onMounted } from 'vue'
 import { useModules } from '../stores/modules'
 import { useStories } from '../stores/stories'
-import { BRAND_NAME } from '../lib/config'
 
 const { modules, fetchModules } = useModules()
 const { featuredStories, fetchFeaturedStories } = useStories()
