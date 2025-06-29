@@ -5,9 +5,11 @@
         <!-- Logo -->
         <div class="flex items-center">
           <router-link to="/" class="flex items-center space-x-2">
-            <div class="w-8 h-8 bg-teal-800 rounded-lg flex items-center justify-center">
-              <span class="text-white font-bold text-xl">{{ brandInitial }}</span>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="{{ BRAND_NAME }} Logo" 
+              class="w-8 h-8 object-contain"
+            />
             <span class="text-xl font-heading font-bold text-teal-800">{{ BRAND_NAME }}</span>
           </router-link>
         </div>
