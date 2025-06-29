@@ -61,8 +61,7 @@
         <div
           v-for="badge in filteredBadges"
           :key="badge.id"
-          class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
-          :class="badge.earned ? 'transform hover:-translate-y-2' : 'opacity-60'"
+          class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2"
         >
           <!-- Badge Image/Icon -->
           <div
