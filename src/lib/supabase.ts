@@ -20,6 +20,7 @@ export interface Module {
   badge_name: string
   duration: string
   icon: string
+  live: boolean
   created_at: string
   updated_at: string
 }
@@ -80,6 +81,7 @@ export const moduleService = {
     const { data, error } = await supabase
       .from('modules')
       .select('*')
+      .eq('live', true)
       .order('created_at', { ascending: true })
     
     return { data, error }
@@ -90,6 +92,7 @@ export const moduleService = {
       .from('modules')
       .select('*')
       .eq('id', id)
+      .eq('live', true)
       .single()
     
     return { data, error }
@@ -100,6 +103,7 @@ export const moduleService = {
       .from('modules')
       .select('*')
       .eq('title', title)
+      .eq('live', true)
       .single()
     
     return { data, error }
