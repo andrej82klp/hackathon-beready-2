@@ -1,11 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
-      <div class="flex justify-center">
-        <div class="w-12 h-12 bg-teal-800 rounded-lg flex items-center justify-center">
-          <span class="text-white font-bold text-2xl">{{ brandInitial }}</span>
-        </div>
-      </div>
       <h2 class="mt-6 text-center text-3xl font-heading font-bold text-teal-800">
         Join {{ BRAND_NAME }} Today
       </h2>
@@ -165,8 +160,6 @@ import { BRAND_NAME } from '../../lib/config'
 
 const router = useRouter()
 const { signUp } = useAuth()
-
-const brandInitial = BRAND_NAME.charAt(0)
 
 const email = ref('')
 const password = ref('')
