@@ -146,8 +146,6 @@ const router = useRouter()
 const { isAuthenticated, signOut } = useAuth()
 const mobileMenuOpen = ref(false)
 
-const brandInitial = BRAND_NAME.charAt(0)
-
 const navigationLinks = [
   { name: 'Learn', path: '/learn' },
   { name: 'Real Stories', path: '/stories' },
