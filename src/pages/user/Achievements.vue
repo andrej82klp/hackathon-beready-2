@@ -99,6 +99,21 @@
 
             <!-- Action Buttons -->
             <div class="mt-4 flex gap-2">
+              <router-link
+                v-if="!badge.earned"
+                :to="`/learn/${badge.moduleId}`"
+                class="w-full bg-teal-800 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-teal-700 transition-colors duration-200 text-center"
+              >
+                Start Learning
+              </router-link>
+              
+              <router-link
+                v-if="badge.earned"
+                :to="`/learn/${badge.moduleId}`"
+                class="w-full bg-gray-100 text-gray-700 px-3 py-2 rounded-lg text-sm font-semibold hover:bg-gray-200 transition-colors duration-200 text-center"
+              >
+                Review
+              </router-link>
               <div v-if="badge.earned" class="flex flex-col sm:flex-row gap-2 flex-1">
                 <button
                   @click="shareBadge(badge, 'facebook')"
@@ -120,22 +135,6 @@
                   X
                 </button>
               </div>
-              
-              <router-link
-                v-if="!badge.earned"
-                :to="`/learn/${badge.moduleId}`"
-                class="w-full bg-teal-800 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-teal-700 transition-colors duration-200 text-center"
-              >
-                Start Learning
-              </router-link>
-              
-              <router-link
-                v-if="badge.earned"
-                :to="`/learn/${badge.moduleId}`"
-                class="w-full bg-gray-100 text-gray-700 px-3 py-2 rounded-lg text-sm font-semibold hover:bg-gray-200 transition-colors duration-200 text-center"
-              >
-                Review
-              </router-link>
             </div>
           </div>
         </div>
