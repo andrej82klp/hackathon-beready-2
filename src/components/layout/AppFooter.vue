@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-teal-800 text-white">
+  <footer class="bg-teal-800 text-white relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <!-- Brand -->
@@ -72,6 +72,15 @@
         <p class="text-gray-200">
           © {{ new Date().getFullYear() }} {{ BRAND_NAME }}. All rights reserved. Empowering communities through first aid education.
         </p>
+      </div>
+
+      <!-- Bolt Logo -->
+      <div class="absolute bottom-4 right-4">
+        <img 
+          src="/built_with_bolt.svg" 
+          alt="Built with Bolt" 
+          class="w-16 h-auto opacity-70 hover:opacity-100 transition-opacity duration-200"
+        />
       </div>
     </div>
   </footer>
