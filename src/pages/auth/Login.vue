@@ -1,11 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
-      <div class="flex justify-center">
-        <div class="w-12 h-12 bg-teal-800 rounded-lg flex items-center justify-center">
-          <span class="text-white font-bold text-2xl">{{ brandInitial }}</span>
-        </div>
-      </div>
       <h2 class="mt-6 text-center text-3xl font-heading font-bold text-teal-800">
         Sign in to {{ BRAND_NAME }}
       </h2>
