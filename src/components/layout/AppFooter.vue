@@ -76,7 +76,7 @@
 
       <!-- Bolt Logo -->
       <div class="absolute bottom-4 right-4">
-        <a href="https://bolt.new/" target="_blank"
+        <a href="https://bolt.new/" target="_blank">
           <img 
             src="/built_with_bolt.svg" 
             alt="Built with Bolt" 
