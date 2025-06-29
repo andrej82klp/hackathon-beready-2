@@ -5,9 +5,11 @@
         <!-- Brand -->
         <div class="col-span-1 md:col-span-2">
           <div class="flex items-center space-x-2 mb-4">
-            <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-              <span class="text-teal-800 font-bold text-xl">{{ brandInitial }}</span>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="{{ BRAND_NAME }} Logo" 
+              class="w-16 h-16 object-contain"
+            />
             <span class="text-xl font-heading font-bold">{{ BRAND_NAME }}</span>
           </div>
           <p class="text-gray-200 mb-4 max-w-md">
@@ -77,6 +79,4 @@
 
 <script setup lang="ts">
 import { BRAND_NAME } from '../../lib/config'
-
-const brandInitial = BRAND_NAME.charAt(0)
 </script>
