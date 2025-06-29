@@ -3,9 +3,6 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Hero Section -->
       <div class="text-center mb-16">
-        <div class="w-20 h-20 bg-teal-800 rounded-full flex items-center justify-center mx-auto mb-6">
-          <span class="text-white font-bold text-3xl">{{ brandInitial }}</span>
-        </div>
         <h1 class="text-4xl md:text-5xl font-heading font-bold text-teal-800 mb-6">
           About {{ BRAND_NAME }}
         </h1>
@@ -248,6 +245,4 @@
 
 <script setup lang="ts">
 import { BRAND_NAME } from '../lib/config'
-
-const brandInitial = BRAND_NAME.charAt(0)
 </script>
