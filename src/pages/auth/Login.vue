@@ -133,8 +133,6 @@ import { BRAND_NAME } from '../../lib/config'
 const router = useRouter()
 const { signIn } = useAuth()
 
-const brandInitial = BRAND_NAME.charAt(0)
-
 const email = ref('')
 const password = ref('')
 const rememberMe = ref(false)
