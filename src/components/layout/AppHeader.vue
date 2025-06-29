@@ -8,7 +8,7 @@
             <img 
               src="/logo.png" 
               alt="{{ BRAND_NAME }} Logo" 
-              class="w-8 h-8 object-contain"
+              class="w-16 h-16 object-contain"
             />
             <span class="text-xl font-heading font-bold text-teal-800">{{ BRAND_NAME }}</span>
           </router-link>
