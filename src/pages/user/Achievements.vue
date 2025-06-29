@@ -99,19 +99,10 @@
             <!-- Action Buttons -->
             <div class="mt-4 space-y-3">
               <router-link
-                v-if="!badge.earned"
                 :to="`/learn/${badge.moduleId}`"
                 class="w-full bg-teal-800 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-teal-700 transition-colors duration-200 text-center"
-                v-text="`Start Learning`"
               >
-              </router-link>
-              
-              <router-link
-                v-if="badge.earned"
-                :to="`/learn/${badge.moduleId}`"
-                class="block w-full bg-teal-800 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-teal-700 transition-colors duration-200 text-center"
-              >
-                Review
+                {{ badge.earned ? 'Review' : 'Start Learning' }}
               </router-link>
               
               <div v-if="badge.earned" class="flex flex-col sm:flex-row gap-2">
