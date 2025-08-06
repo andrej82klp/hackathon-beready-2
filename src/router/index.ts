@@ -8,6 +8,8 @@ import DonateSuccess from '../pages/DonateSuccess.vue'
 import Feedback from '../pages/Feedback.vue'
 import Login from '../pages/auth/Login.vue'
 import Register from '../pages/auth/Register.vue'
+import PasswordReset from '../pages/auth/PasswordReset.vue'
+import UpdatePassword from '../pages/auth/UpdatePassword.vue'
 import Dashboard from '../pages/user/Dashboard.vue'
 import Achievements from '../pages/user/Achievements.vue'
 import TermsOfService from '../pages/legal/TermsOfService.vue'
@@ -24,6 +26,8 @@ export const routes = [
   { path: '/feedback', name: 'Feedback', component: Feedback },
   { path: '/login', name: 'Login', component: Login },
   { path: '/register', name: 'Register', component: Register },
+  { path: '/forgot-password', name: 'PasswordReset', component: PasswordReset },
+  { path: '/reset-password', name: 'UpdatePassword', component: UpdatePassword },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard, meta: { requiresAuth: true } },
   { path: '/achievements', name: 'Achievements', component: Achievements, meta: { requiresAuth: true } },
   { path: '/legal/terms-of-service', name: 'TermsOfService', component: TermsOfService },
